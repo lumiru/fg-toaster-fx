@@ -1,3 +1,7 @@
+/*
+  Gère les options de configurations dans la fenêtre d'options (options.html).
+*/
+
 // Affichage des configurations
 self.port.on("data", function(data) {
   data = JSON.parse(data);
