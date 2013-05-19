@@ -12,6 +12,16 @@ self.port.on("data", function(data) {
       document.getElementById("battleSound").src = data.storage["sound-battle-file"];
     }
   }
+  if(data.storage["sound-whisper"]) {
+    document.getElementById("sound-whisper").checked = true;
+    var checkbox = document.getElementById("sound-whisper-file");
+    checkbox.disabled = false;
+    if(data.storage["sound-whisper-file"]) {
+      checkbox.checked = true;
+      document.getElementById("sound-whisper-file-get").disabled = false;
+      document.getElementById("whisperSound").src = data.storage["sound-whisper-file"];
+    }
+  }
 });
 
 // Enregistrement des modifications
@@ -44,12 +54,22 @@ for(i = -1, l = inputs.length; ++i < l;) {
       }
     }
     else if(type == "file") {
-      var reader = new FileReader();
-      reader.onload = function(rEvent) {
-        self.port.emit("save", JSON.stringify({key: "sound-battle-file", value: rEvent.target.result}));
-        document.getElementById("battleSound").src = rEvent.target.result;
-      };
-      reader.readAsDataURL(files[0]);
+      if(id == "sound-battle-file-get") {
+        var reader = new FileReader();
+        reader.onload = function(rEvent) {
+          self.port.emit("save", JSON.stringify({key: "sound-battle-file", value: rEvent.target.result}));
+          document.getElementById("battleSound").src = rEvent.target.result;
+        };
+        reader.readAsDataURL(files[0]);
+      }
+      else if(id == "sound-whisper-file-get") {
+        var reader = new FileReader();
+        reader.onload = function(rEvent) {
+          self.port.emit("save", JSON.stringify({key: "sound-whisper-file", value: rEvent.target.result}));
+          document.getElementById("whisperSound").src = rEvent.target.result;
+        };
+        reader.readAsDataURL(files[0]);
+      }
     }
   }}, false);
 }
@@ -59,4 +79,10 @@ self.port.on("battle", function() {
   var sound = document.getElementById("battleSound");
   sound.volume = 0.5;
   sound.play();
+});
+self.port.on("whisper", function() {
+  var sound = document.getElementById("whisperSound");
+  sound.volume = 0.8;
+  sound.play();
+  //self.port.emit("log", "Whisper!");
 });

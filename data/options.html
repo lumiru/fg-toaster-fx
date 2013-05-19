@@ -42,7 +42,7 @@ li {
   </style>
 </head>
 <body>
-  <p><audio src="battle.ogg" id="battleSound" /></p>
+  <p><audio src="battle.ogg" id="battleSound" /><audio src="whisper.ogg" id="whisperSound" /></p>
   <h1>Fallen Galaxy</h1>
   <fieldset><legend>Combats</legend>
     <ul>
@@ -53,6 +53,21 @@ li {
             <p><label><input type="checkbox" id="sound-battle-file" disabled="disabled" /> Utiliser un son personnalis&eacute;</label></p>
             <ul>
               <li><input type="file" id="sound-battle-file-get" accept="audio/*" disabled="disabled" /></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    <ul>
+  </fieldset>
+  <fieldset><legend>Murmures</legend>
+    <ul>
+      <li>
+        <p><label><input type="checkbox" id="sound-whisper" /> &Eacute;mettre un son lors d'un murmure</label></p>
+        <ul>
+          <li>
+            <p><label><input type="checkbox" id="sound-whisper-file" disabled="disabled" /> Utiliser un son personnalis&eacute;</label></p>
+            <ul>
+              <li><input type="file" id="sound-whisper-file-get" accept="audio/*" disabled="disabled" /></li>
             </ul>
           </li>
         </ul>
