@@ -65,7 +65,7 @@ for(i = -1, l = inputs.length; ++i < l;) {
           self.port.emit("save", JSON.stringify({key: "sound-battle-file", value: rEvent.target.result}));
           document.getElementById("battleSound").src = rEvent.target.result;
         };
-        reader.readAsDataURL(this.files[0]);
+        reader.readAsDataURL(this.files[0]); // TODO mozFullPath
       }
       else if(this.id == "sound-whisper-file-get") {
         var reader = new FileReader();
@@ -73,7 +73,7 @@ for(i = -1, l = inputs.length; ++i < l;) {
           self.port.emit("save", JSON.stringify({key: "sound-whisper-file", value: rEvent.target.result}));
           document.getElementById("whisperSound").src = rEvent.target.result;
         };
-        reader.readAsDataURL(this.files[0]);
+        reader.readAsDataURL(this.files[0]); // TODO mozFullPath
       }
     }
   }, false);

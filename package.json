@@ -1,0 +1,10 @@
+{
+    "name": "fg-fx-addon",
+    "license": "GPL 3.0",
+    "author": "lumiru",
+    "version": "1.2",
+    "fullName": "Fallen Galaxy",
+    "id": "fg-addon-jid1hn",
+    "homepage": "http://pandora.fallengalaxy.com/",
+    "description": "Affiche une notification sur votre bureau lorsqu'il se passe quelque chose d'important sur Pandora dans Fallen Galaxy."
+}
