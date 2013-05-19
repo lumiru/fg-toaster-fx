@@ -29,13 +29,35 @@ label:hover {
 input {
   vertical-align: middle;
 }
+ul {
+  list-style: none;
+}
+ul ul {
+  margin-left: 15px;
+}
+li {
+  line-height: 20px;
+  min-height: 24px;
+}
   </style>
 </head>
 <body>
   <p><audio src="battle.ogg" id="battleSound" /></p>
   <h1>Fallen Galaxy</h1>
   <fieldset><legend>Combats</legend>
-    <p><label><input type="checkbox" id="sound-battle" /> &Eacute;mettre un son lors d'une alerte de combat</label></p>
+    <ul>
+      <li>
+        <p><label><input type="checkbox" id="sound-battle" /> &Eacute;mettre un son lors d'une alerte de combat</label></p>
+        <ul>
+          <li>
+            <p><label><input type="checkbox" id="sound-battle-file" disabled="disabled" /> Utiliser un son personnalis&eacute;</label></p>
+            <ul>
+              <li><input type="file" id="sound-battle-file-get" accept="audio/*" disabled="disabled" /></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    <ul>
   </fieldset>
   <p><em>Cliquez hors du cadre pour sortir</em></p>
 </body>
