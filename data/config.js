@@ -1,5 +1,6 @@
 /*
   Gère les options de configurations dans la fenêtre d'options (options.html).
+  Joue les alertes sonores.
 */
 
 // Affichage des configurations
@@ -32,11 +33,11 @@ self.port.on("data", function(data) {
 var inputs = document.getElementsByTagName("input");
 var i, j, l;
 for(i = -1, l = inputs.length; ++i < l;) {
-  inputs[i].addEventListener("change", function() { with(this) {
-    if(type == "checkbox") {
-      self.port.emit("save", JSON.stringify({key: id, value: checked}));
-      var li = parentNode.parentNode.parentNode, l, children, child;
-      if(checked) {
+  inputs[i].addEventListener("change", function() {
+    if(this.type == "checkbox") {
+      self.port.emit("save", JSON.stringify({key: this.id, value: this.checked}));
+      var li = this.parentNode.parentNode.parentNode, l, children, child;
+      if(this.checked) {
         children = li.getElementsByTagName("ul")[0].childNodes;
         for(j = -1, l = children.length; ++j < l;) {
           child = children[j];
@@ -57,25 +58,25 @@ for(i = -1, l = inputs.length; ++i < l;) {
         }
       }
     }
-    else if(type == "file") {
-      if(id == "sound-battle-file-get") {
+    else if(this.type == "file") {
+      if(this.id == "sound-battle-file-get") {
         var reader = new FileReader();
         reader.onload = function(rEvent) {
           self.port.emit("save", JSON.stringify({key: "sound-battle-file", value: rEvent.target.result}));
           document.getElementById("battleSound").src = rEvent.target.result;
         };
-        reader.readAsDataURL(files[0]);
+        reader.readAsDataURL(this.files[0]);
       }
-      else if(id == "sound-whisper-file-get") {
+      else if(this.id == "sound-whisper-file-get") {
         var reader = new FileReader();
         reader.onload = function(rEvent) {
           self.port.emit("save", JSON.stringify({key: "sound-whisper-file", value: rEvent.target.result}));
           document.getElementById("whisperSound").src = rEvent.target.result;
         };
-        reader.readAsDataURL(files[0]);
+        reader.readAsDataURL(this.files[0]);
       }
     }
-  }}, false);
+  }, false);
 }
 
 // Lance l'alerte audio
