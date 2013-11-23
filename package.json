@@ -2,9 +2,32 @@
     "name": "fg-fx-addon",
     "license": "GPL 3.0",
     "author": "lumiru",
-    "version": "1.2.2",
+    "version": "1.3",
     "fullName": "Fallen Galaxy",
     "id": "fg-addon-jid1hn",
     "homepage": "http://pandora.fallengalaxy.com/",
-    "description": "Affiche une notification sur votre bureau lorsqu'il se passe quelque chose d'important sur Pandora dans Fallen Galaxy."
+    "description": "Affiche une notification sur votre bureau lorsqu'il se passe quelque chose d'important sur Pandora dans Fallen Galaxy.",
+    "preferences": [{
+        "title": "Activer l'alerte audio des combats",
+        "name": "snd-battle-enabled",
+        "type": "bool",
+        "description": "Émettre un son lors d'une alerte de combat",
+        "value": false
+    },{
+        "title": "Alerte audio personnalisée",
+        "name": "snd-battle-file",
+        "type": "file",
+        "description": "Fichier au format OGG, WebM, WAVE ou MP3"
+    },{
+        "title": "Activer l'alerte audio des murmures",
+        "name": "snd-whisper-enabled",
+        "type": "bool",
+        "description": "Émettre un son lors d'un murmure",
+        "value": false
+    },{
+        "title": "Alerte audio personnalisée",
+        "name": "snd-whisper-file",
+        "type": "file",
+        "description": "Fichier au format OGG, WebM, WAVE ou MP3"
+    }]
 }
