@@ -8,6 +8,12 @@
     "homepage": "http://pandora.fallengalaxy.com/",
     "description": "Affiche une notification sur votre bureau lorsqu'il se passe quelque chose d'important sur Pandora dans Fallen Galaxy.",
     "preferences": [{
+        "title": "Activer l'alerte visuelle des combats",
+        "name": "notif-battle-enabled",
+        "type": "bool",
+        "description": "Affiche une notification sur votre bureau lorsqu'un adversaire vous attaque",
+        "value": true
+    },{
         "title": "Activer l'alerte audio des combats",
         "name": "snd-battle-enabled",
         "type": "bool",
@@ -18,6 +24,12 @@
         "name": "snd-battle-file",
         "type": "file",
         "description": "Fichier au format OGG, WebM, WAVE ou MP3"
+    },{
+        "title": "Activer l'alerte visuelle des murmures",
+        "name": "notif-whisper-enabled",
+        "type": "bool",
+        "description": "Affiche une notification sur votre bureau lorsque vous recevez un murmure",
+        "value": true
     },{
         "title": "Activer l'alerte audio des murmures",
         "name": "snd-whisper-enabled",
