@@ -23,7 +23,7 @@
         "title": "Alerte audio personnalisée",
         "name": "snd-battle-file",
         "type": "file",
-        "description": "Fichier au format OGG, WebM, WAVE ou MP3"
+        "description": "Fichier au format OGG, WebM, WAVE"
     },{
         "title": "Activer l'alerte visuelle des murmures",
         "name": "notif-whisper-enabled",
@@ -40,6 +40,6 @@
         "title": "Alerte audio personnalisée",
         "name": "snd-whisper-file",
         "type": "file",
-        "description": "Fichier au format OGG, WebM, WAVE ou MP3"
+        "description": "Fichier au format OGG, WebM, WAVE"
     }]
 }

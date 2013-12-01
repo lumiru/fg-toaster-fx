@@ -3,19 +3,15 @@
   Joue les alertes sonores.
 */
 
-// Affichage des configurations
+// (re)Chargement des données en mémoire
 self.port.on("data", function(data) {
   data = JSON.parse(data);
   document.getElementsByTagName("h1")[0].textContent += " " + data.version;
-  if(data.storage["sound-battle"]) {
-    if(data.storage["sound-battle-file"]) {
-      document.getElementById("battleSound").src = "file://" + data.storage["sound-battle-file"];
-    }
+  if(data.storage["sound-battle"] && data.storage["sound-battle-file"]) {
+    document.getElementById("battleSound").src = "file://" + data.storage["sound-battle-file"];
   }
-  if(data.storage["sound-whisper"]) {
-    if(data.storage["sound-whisper-file"]) {
-      document.getElementById("whisperSound").src = "file://" + data.storage["sound-whisper-file"];
-    }
+  if(data.storage["sound-whisper"] && data.storage["sound-whisper-file"]) {
+    document.getElementById("whisperSound").src = "file://" + data.storage["sound-whisper-file"];
   }
 });
 
