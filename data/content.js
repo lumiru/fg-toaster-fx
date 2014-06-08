@@ -33,12 +33,6 @@ notifbarReady(function() {
 		var customEvent = document.createEvent("Event");
 		customEvent.initEvent("notify", true, true);
 		var notifier = document.getElementById("fallengalaxy-fx-addon-notifier");
-		addAlertListener({
-			onAlert: function(alert) {
-				notifier.textContent = JSON.stringify(alert);
-				notifier.dispatchEvent(customEvent);
-			}
-		});
 
 		// Observe les modifications dans le chat pour savoir quand
 		// il y a un murmure et jouer un son.
