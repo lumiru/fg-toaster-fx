@@ -2,17 +2,18 @@
     "name": "fg-fx-addon",
     "license": "GPL 3.0",
     "author": "lumiru",
-    "version": "1.4",
+    "version": "1.4.2",
     "fullName": "Fallen Galaxy",
-    "id": "fg-addon-jid1hn",
+    "id": "fg-addon-jid1hn@jetpack",
     "homepage": "http://pandora.fallengalaxy.com/",
     "description": "Émet un son lorsqu'il se passe quelque chose d'important sur Pandora dans Fallen Galaxy.",
+    "main": "lib/main.js",
     "preferences": [{
         "title": "Activer l'alerte audio des murmures",
         "name": "snd-whisper-enabled",
         "type": "bool",
         "description": "Émettre un son lors d'un murmure",
-        "value": false
+        "value": true
     },{
         "title": "Alerte audio personnalisée",
         "name": "snd-whisper-file",
